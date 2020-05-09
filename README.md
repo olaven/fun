@@ -32,5 +32,6 @@ const format_salary = (person: Person) =>
         .apply(salary => `${salary},-`)
         .get();
 
-assertEquals("10,-", format_salary(person));
+//prints 100,-
+console.log(format_salary(person));
 ```
