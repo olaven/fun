@@ -20,7 +20,7 @@ These functions are:
 
 See the example below: 
 ```typescript
-import { fun } from "TODO URL" 
+import { fun } from "https://denopkg.com/olaven/fun" 
 
 interface Person { name: string, salary: number }
 const person: Person = { name: "joe", salary: 100 }; 
