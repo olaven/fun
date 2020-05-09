@@ -70,6 +70,21 @@ test("Creating higher order function with apply and map", () => {
     assertEquals("10,-", format_salary(person));
 });
 
+test("Exact example from readme", () => {
+
+    interface Person { name: string, salary: number }
+    const person: Person = { name: "joe", salary: 10 }; 
+
+    const format_salary = (person: Person) => 
+        fun(person)
+            .map(person => person.salary)
+            .map(salary => salary.toString())
+            .apply(salary => `${salary},-`)
+            .get();
+
+    assertEquals("10,-", format_salary(person));
+});
+
 test("Can call side-effect with `run`", () => {
 
     let side_effect_called = false

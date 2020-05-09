@@ -36,4 +36,3 @@ export const fun = <T> (value: T) => ({
      */
     get: () => value
 });
-
