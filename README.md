@@ -1,4 +1,4 @@
-# fun
+# Fun ![Test](https://github.com/olaven/fun/workflows/Test/badge.svg) [![deno doc](https://doc.deno.land/badge.svg)](https://doc.deno.land/https/raw.githubusercontent.com/olaven/fun/master/mod.ts) [![codebeat badge](https://codebeat.co/badges/7529200f-9cc1-4049-80f6-b3f4f06dfc4b)](https://codebeat.co/projects/github-com-olaven-fun-master)
 Utility library for functional programming in Deno   
 
 ## About 
