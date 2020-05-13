@@ -1,3 +1,5 @@
+type Action<T, G> = (v: T) => G
+
 /**
  * Entry point for functional 
  * operations on a given value. 
@@ -11,7 +13,7 @@ export const fun = <T> (value: T) => ({
      * vlaue of different type 
      * @param
      */
-    map: <G> (action: (v: T) => G) => 
+    map: <G> (action: Action<T, G>) => 
         fun(action(value)),
 
     /**
@@ -19,17 +21,23 @@ export const fun = <T> (value: T) => ({
      * map the valeu to another 
      * vlaue of the same type 
      */
-    apply: (action: (v: T) => T) => 
+    apply: (action: Action<T, T>) => 
         fun(action(value)),
 
     /**
      * Runs the given function 
      */
-    run: (action: (v: T) => void) => {
+    run: (action: Action<T, void>) => {
         
         action(value); 
         return fun(value);
     },
+
+    if: <G, E> (predicate: Action<T, boolean>, t: Action<T, G>, e: Action<T, E>) => 
+        predicate(value) ? 
+            fun(t(value)): 
+            fun(e(value))
+    ,
     
     /**
      * Returns the value back

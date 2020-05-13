@@ -99,3 +99,43 @@ test("Can call side-effect with `run`", () => {
     times_ten_and_format(10);
     assertEquals(side_effect_called, true);
 });
+
+
+test("Can call if-statement", () => {
+
+    const is_positive = (num: number) => num >= 0; 
+    const on_positive = (_: number) => "positive";
+    const on_negative = (_: number) => "negative";
+
+    const result_positive = fun(5)
+        .if(is_positive, on_positive, on_negative)
+        .get(); 
+
+    const result_negative = fun(-1)
+        .if(is_positive, on_positive, on_negative)
+        .get()
+
+    assertEquals(result_positive, "positive");
+    assertEquals(result_negative, "negative");
+});
+
+
+test("Chaining ifs", () => {
+
+    const is_positive = (num: number) => num >= 0;
+    const is_negative = (num: number) => !is_positive(num);
+
+    const returns_string = (_: number) => "some string";
+    const returns_number = (_: number) => 1;
+
+    const result_string = fun(3)
+        .if(is_positive, returns_string, returns_number)
+        .get()
+
+    const result_number = fun(3)
+        .if(is_negative, returns_string, returns_number)
+        .get()
+        
+    assertEquals(typeof result_string, "string");
+    assertEquals(typeof result_number, "number");
+});
