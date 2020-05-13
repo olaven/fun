@@ -1,6 +1,6 @@
 type Action<T, G> = (v: T) => G
 
-//NOTE: type definition not used. Perhaps use if it makes the catual object readable. 
+//NOTE: type definition not used. Perhaps use if it makes the actual object readable. 
 type Fun<T> = (value: T) => {
     
     map: <G> (action: Action<T, G>) => Fun<G>, 
@@ -44,7 +44,7 @@ export const fun = <T> (value: T) => ({
     },
 
     //NOTE: perhaps both `t` and `e` should have to return the same type for predictability? not sure. 
-    if: <G, E> (predicate: Action<T, boolean>, t: Action<T, G>, e: Action<T, E>) => 
+    if: <True, False> (predicate: Action<T, boolean>, t: Action<T, True>, e: Action<T, False>) => 
         predicate(value) ? 
             fun(t(value)): 
             fun(e(value))
