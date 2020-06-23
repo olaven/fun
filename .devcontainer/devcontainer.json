@@ -1,0 +1,12 @@
+{
+    "name": "Fun Devcontainer",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "extensions": [
+        "denoland.vscode-deno"
+    ],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    }
+}
