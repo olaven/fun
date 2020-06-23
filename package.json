@@ -1,6 +1,6 @@
 {
-  "name": "fun",
-  "version": "0.1.0",
+  "name": "fun-node",
+  "version": "0.1.1",
   "description": "Tiny utility library for functional-style programming",
   "main": "lib/mod.js",
   "scripts": {
