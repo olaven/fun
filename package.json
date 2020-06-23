@@ -1,0 +1,32 @@
+{
+  "name": "fun-node",
+  "version": "0.1.1",
+  "description": "Tiny utility library for functional-style programming",
+  "main": "lib/mod.js",
+  "scripts": {
+    "test": "deno test",
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olaven/fun.git"
+  },
+  "keywords": [
+    "functional",
+    "typescript",
+    "library",
+    "deno",
+    "node"
+  ],
+  "author": "@olaven",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/olaven/fun/issues"
+  },
+  "homepage": "https://github.com/olaven/fun#readme",
+  "devDependencies": {
+    "tsc": "^1.20150623.0",
+    "typescript": "^3.9.5"
+  }
+}
